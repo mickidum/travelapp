@@ -1,23 +1,29 @@
 <template>
   <div id="app" class="containera">
-
     <div class="row">
-      <contact
-       @delete-contact="deleteContact(contact)" 
-       v-for="contact in contacts" 
-       :key="contact.id" 
-       :contact.sync="contact"
-       @edit-contact="editContact(contact)"></contact>
       
-      <div class="col s12 l6 xl4">
+    <div class="col s12 l6 xl10">
+      <div class="row">
+        <contact
+         @delete-contact="deleteContact(contact)" 
+         v-for="contact in contacts" 
+         :key="contact.id" 
+         :contact="contact"
+         @edit-contact="editContact(contact)">
+        </contact>
+      </div>
+    </div>
+
+    <div class="col s12 l6 xl2">
         <div class="card-panel z-depth-1 contact adding">
           <div class="inner teal-text text-lighten-4">
            <i @click="addContact(model)" class="large material-icons">add_circle_outline</i>
           </div>
         </div>
       </div>
-
     </div>
+    
+
 
     <!-- FORM YO Yo -->
     <div id="modal1" class="modal">
